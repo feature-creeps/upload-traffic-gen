@@ -18,7 +18,7 @@ Flags:
   -d, --directory string   Directory to walk
   -f, --forever            Run forever (default true)
   -h, --help               help for imggen
-  -u, --url string         URL to POST form data to (default "http://localhost:8080/api/images")
+  -u, --url string         URL to POST form data to (default "http://localhost:8081/api/images")
 ```
 
 ### Mandatory flags

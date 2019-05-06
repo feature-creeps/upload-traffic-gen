@@ -148,7 +148,7 @@ func asTarget(path string) (*vegeta.Target, error) {
 	}
 	_, err = io.Copy(part, file)
 
-	writer.WriteField("name", fmt.Sprintf("%s %s %s", randomdata.Adjective(), randomdata.Noun(), randomdata.FullDate()))
+	writer.WriteField("name", fmt.Sprintf("gen_up_%s %s %s %s", randomdata.StringNumberExt(2, "-", 9), randomdata.Adjective(), randomdata.Noun(), randomdata.FullDate()))
 
 	err = writer.Close()
 	if err != nil {
@@ -191,7 +191,7 @@ func Execute() {
 	rootCmd.MarkFlagRequired("directory")
 
 	rootCmd.Flags().BoolVarP(&forever, "forever", "f", true, "Run forever")
-	rootCmd.Flags().StringVarP(&url, "url", "u", "http://localhost:8080/api/images", "URL to POST form data to")
+	rootCmd.Flags().StringVarP(&url, "url", "u", "http://localhost:8081/api/images", "URL to POST form data to")
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
