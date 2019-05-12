@@ -148,7 +148,7 @@ func asTarget(path string) (*vegeta.Target, error) {
 	}
 	_, err = io.Copy(part, file)
 
-	writer.WriteField("name", fmt.Sprintf("gen_up_%s %s %s %s", randomdata.StringNumberExt(2, "-", 9), randomdata.Adjective(), randomdata.Noun(), randomdata.FullDate()))
+	writer.WriteField("name", fmt.Sprintf("uploaded %s %s", randomdata.Adjective(), randomdata.Noun()))
 
 	err = writer.Close()
 	if err != nil {
